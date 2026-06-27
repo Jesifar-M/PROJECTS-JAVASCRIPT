@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
 </head>
+
 
 <script>
 
@@ -15,24 +16,20 @@ let userProfile = {
 
 function cleanUserBio(profile) {
 
-    let user = profile.username.trim().toLowerCase();
+    let username = profile.username.trim().toLowerCase();
 
     let bio = profile.bio.trim().toLowerCase();
 
-    bio = bio.replace("javascript", "js");
-
-    let bioLength = bio.length;
+    bio = bio.replaceAll("javascript", "JS");
 
     return {
-        username: user,
+        username: username,
         bio: bio,
-        bioLength: bioLength
+        bioLength: bio.length
     };
 }
 
-let result = cleanUserBio(userProfile);
-
-console.log(result);
+console.log(cleanUserBio(userProfile));
 
 </script>
 
