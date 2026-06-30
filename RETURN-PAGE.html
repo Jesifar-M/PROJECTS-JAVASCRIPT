@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<button onclick="check()">Check Return</button>
+
+<p id="result"></p>
+
+<script>
+
+let order = {
+    itemName: "Shoes",
+    isDelivered: true,
+    daysSinceDelivery: 5
+};
+
+function check() {
+
+    document.getElementById("result").innerHTML =
+    (order.isDelivered && order.daysSinceDelivery <= 7)
+    ? "Eligible for Return"
+    : "Return Period Expired";
+
+    "itemName" in order;   // Check property
+
+    delete order.daysSinceDelivery;   // Delete property
+
+    console.log(order);    // Only one console output
+
+}
+
+</script>
+
+</body>
+</html>
