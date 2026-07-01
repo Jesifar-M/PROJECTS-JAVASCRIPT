@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product List</title>
+</head>
+<body>
+
+<h2>Product List</h2>
+
+<script>
+
+let products = ["Apple", "Banana", "Orange"];
+let prices = [50, 30, 60];
+
+let list = [];
+
+// Merge product names and prices
+for (let i = 0; i < products.length; i++) {
+    list.push("Product: " + products[i] + " - Price: " + prices[i]);
+}
+
+// Display all products
+document.write("<h3>All Products</h3>");
+
+for (let i = 0; i < list.length; i++) {
+    document.write(list[i] + "<br>");
+}
+
+// Show products with price greater than 50
+document.write("<h3>Price Greater Than 50</h3>");
+
+for (let i = 0; i < prices.length; i++) {
+    if (prices[i] > 50) {
+        document.write("Product: " + products[i] + " - Price: " + prices[i] + "<br>");
+    }
+}
+
+// Add new product
+products.push("Watermelon");
+prices.push(80);
+
+document.write("<h3>Updated Product List</h3>");
+
+// Display updated list
+for (let i = 0; i < products.length; i++) {
+    document.write("Product: " + products[i] + " - Price: " + prices[i] + "<br>");
+}
+
+</script>
+
+</body>
+</html>
