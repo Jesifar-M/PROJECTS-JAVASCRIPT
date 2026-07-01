@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+<script>
+
+let students = [
+    {name: "Jesifar", score: 85},
+    {name: "Kevin", score: 55},
+    {name: "Anu", score: 95}
+];
+
+// 1. List all student names
+students.forEach(function(student) {
+    console.log(student.name);
+});
+
+
+// 2. Students with score > 60
+let passed = students.filter(function(student) {
+    return student.score > 60;
+});
+
+console.log(passed);
+
+// 3. Total score
+let total = students.reduce(function(sum, student) {
+    return sum + student.score;
+}, 0);
+
+console.log(total);
+
+// 4. Check if all students passed
+console.log(
+    students.every(function(student) {
+        return student.score > 35;
+    })
+);
+
+// 5. Check if one student scored more than 90
+console.log(
+    students.some(function(student) {
+        return student.score > 90;
+    })
+);
+
+
+// 6. Sort by score (highest to lowest)
+students.sort(function(a, b) {
+    return b.score - a.score;
+});
+
+students.forEach(function(student) {
+    console.log(student.name + " - " + student.score);
+});
+
+</script>
+
+</body>
+</html>
