@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+<input type="date" id="date">
+
+<button onclick="show()">Submit</button>
+
+<p id="result"></p>
+
+<script>
+
+function show() {
+
+    let input = document.getElementById("date").value;
+
+    let date = new Date(input);
+
+    let year = date.getFullYear();
+    let month = date.toLocaleString("default", {month:"long"});
+    let day = date.getDate();
+
+    let years = new Date().getFullYear() - year;
+
+    let message = years > 1
+        ? "It has been more than a year since that date."
+        : "It has been less than a year since that date.";
+
+    document.getElementById("result").innerHTML =
+    "Year: " + year + "<br>" +
+    "Month: " + month + "<br>" +
+    "Day: " + day + "<br>" +
+    "Years Passed: " + years + "<br>" +
+    message;
+
+}
+
+</script>
+
+</body>
+</html>
