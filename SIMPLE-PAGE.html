@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+<script>
+
+let count = 0;
+
+while (count < 5) {
+
+    let code = Number(prompt("Enter Product Code (1-3)"));
+    let quantity = Number(prompt("Enter Quantity"));
+
+    let total;
+
+    switch (code) {
+
+        case 1:
+            total = quantity * 30;
+            console.log("Apple");
+            break;
+
+        case 2:
+            total = quantity * 10;
+            console.log("Banana");
+            break;
+
+        case 3:
+            total = quantity * 50;
+            console.log("Mango");
+            break;
+
+        default:
+            console.log("Invalid Product Code");
+            continue;
+    }
+
+    console.log("Total Price = ₹" + total);
+
+    if (total > 100) {
+        console.log("High purchase");
+    } else {
+        console.log("Normal purchase");
+    }
+
+    count++;
+}
+
+</script>
+
+</body>
+</html>
