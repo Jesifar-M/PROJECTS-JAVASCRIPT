@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+<script>
+    
+// JSON string
+const jsonData = `{
+    "name": "John",
+    "feedback": "Thank you for your support!"
+}`;
+
+try {
+    // Convert JSON string to JavaScript object
+    const user = JSON.parse(jsonData);
+
+    // Named arrow function
+    const checkFeedback = () => {
+        if (user.feedback.toLowerCase().includes("thank")) {
+            console.log("Positive feedback received");
+        } else {
+            console.log("Feedback noted");
+        }
+    };
+
+    // Run the function
+    checkFeedback();
+
+} catch (error) {
+    console.log("Error: " + error.message);
+}
+</script>
+
+</body>
+</html>
