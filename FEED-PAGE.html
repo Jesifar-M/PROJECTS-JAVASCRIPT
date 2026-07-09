@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+<form id="form">
+    <input type="text" id="name" placeholder="Enter Name"><br><br>
+
+    <textarea id="feedback" placeholder="Enter Feedback"></textarea><br><br>
+
+    <button type="submit">Submit</button>
+</form>
+
+<h3 id="details"></h3>
+<p id="message"></p>
+
+<script>
+
+let form = document.getElementById("form");
+let details = document.getElementById("details");
+let message = document.getElementById("message");
+
+form.onsubmit = function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let feedback = document.getElementById("feedback").value;
+
+    details.innerHTML =
+        "Name: " + name + "<br>" +
+        "Feedback: " + feedback;
+
+    message.innerHTML = "Thanks for your feedback!";
+    message.style.color = "green";
+
+    setTimeout(function() {
+        message.innerHTML = "";
+    }, 5000);
+
+}
+
+details.onmouseover = function() {
+    details.style.color = "blue";
+}
+
+details.onmouseout = function() {
+    details.style.color = "black";
+}
+
+</script>
+
+</body>
+</html>
